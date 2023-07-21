@@ -1,3 +1,40 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Check if a theme is already set in Web Storage, if not, set the default theme
+    if (localStorage.getItem('theme') === null) {
+        localStorage.setItem('theme', 'dark'); // Set the default theme to 'dark'
+    }
+
+    // Function to apply the stored theme from Web Storage
+    function applyTheme() {
+        const currentTheme = localStorage.getItem('theme');
+
+        // Change body theme
+        document.body.classList.remove('bg-dark', 'text-light', 'bg-light', 'text-dark');
+        document.body.classList.add(`bg-${currentTheme}`, `text-${currentTheme === 'light' ? 'dark' : 'light'}`);
+
+        // Change navbar theme
+        const navbar = document.querySelector('.navbar');
+        if (currentTheme === 'light') {
+            navbar.classList.remove('navbar-dark');
+            navbar.classList.add('navbar-light');
+        } else {
+            navbar.classList.remove('navbar-light');
+            navbar.classList.add('navbar-dark');
+        }
+    }
+
+    // Apply the stored theme on page load
+    applyTheme();
+
+    // Toggle theme function
+    document.getElementById('toggleTheme').addEventListener('click', function () {
+        const currentTheme = localStorage.getItem('theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme); // Store the new theme in Web Storage
+        applyTheme(); // Apply the new theme immediately
+    });
+});
+
 // Attach an event listener to the form with id "main-form" that calls the userForm function when the form is submitted
 document.getElementById("main-form").addEventListener("submit", userForm);
 
@@ -65,39 +102,3 @@ function myExcelFuns() { // Declare a function named myExcelFuns
     document.getElementById("result").innerText = result; // Display result
     return false; // End function
 }
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Check if a theme is already set in Web Storage, if not, set the default theme
-    if (localStorage.getItem('theme') === null) {
-        localStorage.setItem('theme', 'dark'); // Set the default theme to 'dark'
-    }
-
-    // Function to apply the stored theme from Web Storage
-    function applyTheme() {
-        const currentTheme = localStorage.getItem('theme');
-
-        // Change body theme
-        document.body.classList.remove('bg-dark', 'text-light', 'bg-light', 'text-dark');
-        document.body.classList.add(`bg-${currentTheme}`, `text-${currentTheme === 'light' ? 'dark' : 'light'}`);
-
-        // Change navbar theme
-        const navbar = document.querySelector('.navbar');
-        if (currentTheme === 'light') {
-            navbar.classList.remove('navbar-dark');
-            navbar.classList.add('navbar-light');
-        } else {
-            navbar.classList.remove('navbar-light');
-            navbar.classList.add('navbar-dark');
-        }
-    }
-
-    // Apply the stored theme on page load
-    applyTheme();
-
-    // Toggle theme function
-    document.getElementById('toggleTheme').addEventListener('click', function () {
-        const currentTheme = localStorage.getItem('theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme); // Store the new theme in Web Storage
-        applyTheme(); // Apply the new theme immediately
-    });
-});
