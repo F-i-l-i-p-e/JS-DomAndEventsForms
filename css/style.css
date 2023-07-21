@@ -1,0 +1,24 @@
+body {
+    background-color: #3f1c5d;
+    color: #b392ac;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+}
+
+input[type="radio"] {
+    margin: 0.5rem;
+}
+input[type="text"], input[type="email"] {
+    text-align: center; /* instead of placeholder */
+}
+
+#result {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
