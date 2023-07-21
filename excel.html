@@ -9,22 +9,23 @@
 </head> <!-- End head section -->
 <body class="bg-dark text-light d-flex justify-content-center align-items-center vh-100"> <!-- Begin body, applying classes -->
     <div class="container bg-pastel-orange p-5 rounded text-center"> <!-- Begin container with classes -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark"><!--Navbar Starts-->
             <a class="navbar-brand" href="#">JS Assignment 2</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="excel.html">Excel</a>
                     </li>
                 </ul>
             </div>
-        </nav>
+            <button class="btn btn-secondary" id="toggleTheme">Toggle Theme</button>
+        </nav><!--Navbar Ends-->        
         <h1 class="mb-4">Excel Functions</h1> <!-- Heading 1 -->
         <p>Enter your numbers separated by spaces: </p> <!-- Instruction text -->
         <input id="numbers" type="text" class="form-control mb-3"> <!-- Text input field -->

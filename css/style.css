@@ -1,5 +1,5 @@
 body {
-    background-color: #3f1c5d;
+    background-color: #3c0d5c;
     color: #b392ac;
 }
 
@@ -21,4 +21,9 @@ input[type="text"], input[type="email"] {
 #result {
     margin-top: 2rem;
     font-size: 1.5rem;
+}
+/*Light Theme Change*/
+body.light-theme {
+    background-color: #fff!important;
+    color: #000!important;
 }
